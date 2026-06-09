@@ -22,22 +22,25 @@
 
 ## 用法
 
-```bash
-npm install crypto-js
-```
+### 参数从哪来
+
+打开浏览器 DevTools → Network，筛选 XHR/Fetch，随便点一个小红书接口，复制 **URL 路径**（`/api/` 开头那截）和 **请求体 JSON**。这两个就是 `urlPath` 和 `data`。
 
 ### 直接跑 xhs.js
 
 ```bash
-# 默认参数（推荐页接口）
+npm install crypto-js
+
+# 默认示例（推荐页，参数固定写死在代码里）
 node xhs.js
 
-# 自定义参数：node xhs.js <接口路径> <请求体JSON>
+# 换成你自己的参数：node xhs.js <接口路径> <请求体JSON>
 node xhs.js '/api/sns/web/v1/note/detail' '{"note_id":"66abc123000000001a01e5f5"}'
+node xhs.js '/api/sns/web/v1/comment/list' '{"note_id":"66abc123000000001a01e5f5","cursor":""}'
 ```
 
-- **输入**：接口路径（urlPath）+ 请求体 JSON 字符串（data）
-- **输出**：终端打印一条 `XYS_` 开头的加密签名字符串，直接粘到请求头的 `X-S` 字段用
+- **输入**：接口路径 + 请求体 JSON（直接从浏览器复制就行，不用改格式）
+- **输出**：终端打印 `XYS_` 开头的加密签名串，粘到请求头 `X-S` 字段即可
 
 ### 作为模块引用
 
