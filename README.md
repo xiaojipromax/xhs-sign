@@ -26,17 +26,18 @@
 npm install crypto-js
 ```
 
-### 直接跑 xhs.js，终端输出 X-S 签名字符串
+### 直接跑 xhs.js
 
 ```bash
-# 默认接口（推荐页）
+# 默认参数（推荐页接口）
 node xhs.js
 
-# 指定接口路径和参数
-node xhs.js '/api/sns/web/v1/note/detail' '{"note_id":"xxx"}'
+# 自定义参数：node xhs.js <接口路径> <请求体JSON>
+node xhs.js '/api/sns/web/v1/note/detail' '{"note_id":"66abc123000000001a01e5f5"}'
 ```
 
-输出示例：`XYS_FJWqz8n43Lg0S3...`（一条完整的 X-S 加密值）。
+- **输入**：接口路径（urlPath）+ 请求体 JSON 字符串（data）
+- **输出**：终端打印一条 `XYS_` 开头的加密签名字符串，直接粘到请求头的 `X-S` 字段用
 
 ### 作为模块引用
 
