@@ -23,18 +23,24 @@
 ## 用法
 
 ```bash
-# 安装依赖
 npm install crypto-js
+```
 
-# 测试默认接口签名
+### 直接跑 xhs.js，终端输出 X-S 签名字符串
+
+```bash
+# 默认接口（推荐页）
 node xhs.js
 
 # 指定接口路径和参数
 node xhs.js '/api/sns/web/v1/note/detail' '{"note_id":"xxx"}'
 ```
 
+输出示例：`XYS_FJWqz8n43Lg0S3...`（一条完整的 X-S 加密值）。
+
+### 作为模块引用
+
 ```js
-// 作为模块引用
 const { getXS } = require('./xhs.js');
 const xs = getXS('/api/sns/web/v1/homefeed', JSON.stringify(data));
 fetch('https://edith.xiaohongshu.com/api/sns/web/v1/homefeed', {
