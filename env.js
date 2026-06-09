@@ -161,7 +161,8 @@ body = watch({
     removeChild(){}
 }, `document.body`)
 Document.prototype.body = body
-Document.prototype.cookie = 'abRequestId=placeholder; webBuild=5.7.0; xsecappid=xhs-pc-web; a1=placeholder; webId=placeholder; gid=placeholder; loadts=0; websectiga=placeholder; sec_poison_id=placeholder; unread={}'
+// 替换成你自己的小红书Cookie（浏览器F12 → Application → Cookies）
+Document.prototype.cookie = 'abRequestId=7dd349b3-5b6a-5851-8797-efa9d1850117; webBuild=5.7.0; xsecappid=xhs-pc-web; a1=19bcba43567youn99z172t9qots5w2jpr2a1w4q8s50000304177; webId=30d4888d1c9ebf217f0cb6f809059b7b; gid=yjDSD044qSFJyjDSD04q2J4AKWvl7IjjuyWJ0YM9jAl9My282EJVUE888q84yWW8W4fD2YYW; loadts=1768649731923; websectiga=2a3d3ea002e7d92b5c9743590ebd24010cf3710ff3af8029153751e41a6af4a3; sec_poison_id=4f9d1a7b-6b66-458a-b316-0217df97453f; unread={%22ub%22:%2269661d96000000002200bfed%22%2C%22ue%22:%22694feaf2000000001f00cbe9%22%2C%22uc%22:28}'
 Document.prototype.getElementsByTagName = function getElementsByTagName(tagName){
     if(tagName === "*"){
         return watch([], `document.getElementsByTagName('${tagName}')`)

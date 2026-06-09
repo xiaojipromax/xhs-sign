@@ -59,5 +59,5 @@ fetch('https://edith.xiaohongshu.com/api/sns/web/v1/homefeed', {
 
 ## 注意
 
-- Cookie 等隐私字段已替换为 placeholder，使用时替换回真实值
+- `env.js` 里的 Cookie 是真实值示例，替换成你自己的即可使用（浏览器 F12 → Application → Cookies 复制）
 - 仅供学习研究，请遵守平台使用协议
